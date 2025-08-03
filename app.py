@@ -3,7 +3,7 @@ import time
 from datetime import datetime
 import sqlite3
 from openai import OpenAI
-
+import pytz  # For timezone conversion
 
 
 
@@ -60,17 +60,23 @@ st.markdown(
 
 
 
+
+st.set_page_config(page_title="Birthday Countdown", page_icon="🎂", layout="centered")
 st.title("🎂 Birthday Countdown")
 
-# Fixed birthday date (non-editable)
-birthday_date = datetime(2025, 8, 4, 0, 0, 0)
-st.write(f"🎉 Birthday Date: {birthday_date.strftime('%B %d, %Y')}")
+# Define IST timezone
+ist = pytz.timezone("Asia/Kolkata")
+
+# Fixed birthday date in IST
+birthday_date = ist.localize(datetime(2025, 8, 4, 0, 0, 0))
+st.write(f"🎉 Birthday Date: {birthday_date.strftime('%B %d, %Y %I:%M %p IST')}")
 
 # Placeholder for countdown display
 countdown_placeholder = st.empty()
 
 while True:
-    now = datetime.now()
+    # Get current IST time
+    now = datetime.now(ist)
     remaining = birthday_date - now
 
     if remaining.total_seconds() <= 0:
@@ -87,6 +93,13 @@ while True:
         )
 
     time.sleep(1)  # Update every second
+
+
+
+
+
+
+
 
 
 
@@ -248,6 +261,7 @@ if all_wishes:
                 st.warning("Wish deleted! Please refresh the page.")
 else:
     st.info("No wishes yet!")
+
 
 
 
