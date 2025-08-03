@@ -1,4 +1,4 @@
-import streamlit as st
+4import streamlit as st
 import time
 from datetime import datetime
 import sqlite3
@@ -91,7 +91,6 @@ while True:
 
 
 # OPENAI SETUP
-----------------------------
 openai_api_key = st.sidebar.text_input("Enter OpenAI API Key", type="password")
 client = OpenAI(api_key=openai_api_key) if openai_api_key else None
 
@@ -249,4 +248,5 @@ if all_wishes:
                 st.warning("Wish deleted! Please refresh the page.")
 else:
     st.info("No wishes yet!")
+
 
