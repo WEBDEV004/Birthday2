@@ -30,3 +30,4 @@ while True:
         )
 
     time.sleep(1)  # Update every second
+
