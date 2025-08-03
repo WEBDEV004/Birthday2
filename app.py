@@ -1,4 +1,4 @@
-4import streamlit as st
+import streamlit as st
 import time
 from datetime import datetime
 import sqlite3
@@ -248,5 +248,6 @@ if all_wishes:
                 st.warning("Wish deleted! Please refresh the page.")
 else:
     st.info("No wishes yet!")
+
 
 
