@@ -25,7 +25,7 @@ st.markdown(
 )
 
 # Default photo before opening the gift
-st.image("assets/hb.gif", caption="🎉 Your Special Day!", use_container_width=True)
+st.image("hb.gif", caption="🎉 Your Special Day!", use_container_width=True)
 
 # Countdown
 now = datetime.now()
@@ -47,5 +47,6 @@ if not st.session_state.gift_opened:
         st.balloons()
 else:
     st.success("💖 Surprise!")
-    st.image("assets/sudha.jpg", caption="A Special Gift for You 💌", use_container_width=True)
+    st.image("sudha.jpg", caption="A Special Gift for You 💌", use_container_width=True)
     
+
