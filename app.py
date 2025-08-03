@@ -6,10 +6,10 @@ st.set_page_config(page_title="🎂 Birthday Surprise", layout="wide")
 
 # Main Home Page
 st.title("🎉 Happy Birthday, [Sudha]! 🎉")
-st.image("assets/confetti.gif", use_container_width=True)
+st.image("confetti.gif", use_container_width=True)
 
 # Background music
-st.audio("assets/birthday_song.mp3")
+st.audio("birthday_song.mp3")
 
 # Animated greeting
 st.markdown(
@@ -49,4 +49,5 @@ st.markdown(
     </style>
     """,
     unsafe_allow_html=True,
+
 )
